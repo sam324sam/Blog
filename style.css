@@ -1,0 +1,243 @@
+body {
+    background-color: #0D0221;
+    min-width: 360px;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+/*Cabecera*/
+#cabecera {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    width: 75%;
+    height: 100%;
+    max-height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    background-color: #0D0221;
+}
+
+#barra_navegar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 20px;
+    width: 570px;
+    height: 30px;
+}
+
+#barra_navegar li,
+.contenidos_menu li {
+    list-style: none;
+}
+
+#barra_navegar li:hover {
+    cursor: pointer;
+    text-shadow: 0 0 20px #ffffff;
+}
+
+#barra_navegar a,
+.contenidos_menu a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*Menu desplegable*/
+.menu {
+    background-color: #2dba4e;
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+#icono_menu {
+    display: none;
+    flex-direction: column;
+    height: 30px;
+    width: 40px;
+    justify-content: space-between;
+}
+
+#contenido_menu {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
+    height: 100%;
+    width: 45%;
+    min-height: 100px;
+    min-width: 100px;
+    background-color: #1b6d2e;
+    transform-origin: right center;
+    transition: transform 0.5s;
+    margin-left: 55%;
+    margin-top: -15px;
+}
+
+.contenidos_menu {
+    border-bottom: 2px solid white;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.contenidos_menu a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.contenidos_menu span:hover {
+    color: #ffffff7a;
+    width: 100%;
+    height: 100%;
+}
+
+/*Enlace a repositorio*/
+#enlaceGit {
+    background-color: #5900ff;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#enlaceGit a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+/*Contenedor para sobre mi y lenguaje*/
+#sobre_mi,
+#lenguajes {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: auto;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    padding: 2%;
+    color: #ffffff;
+    justify-content: space-between;
+}
+
+/*Contenedores de img en lenguaje*/
+
+#lenguajes img {
+    width: 7em;
+    transform-origin: bottom center;
+    transition: transform 0.5s;
+}
+
+#lenguajes img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 10px rgba(160, 0, 253, 0.5));
+}
+
+#titulo_lenguajes {
+    margin-top: 20px;
+    margin-left: 15%;
+    padding: 0;
+}
+
+/*Efecto de escribir y buscar letra en js*/
+#span_escribir {
+    border-right: solid white 4px;
+    animation: escribir 1s ease-in-out infinite;
+}
+
+/*Mini animacion para aprentar escribir*/
+@keyframes escribir {
+    0% {
+        border-right: solid white 4px;
+    }
+
+    50% {
+        border-right: solid white 4px;
+    }
+
+    51% {
+        border-right: solid rgba(255, 255, 255, 0) 0px;
+    }
+
+    100% {
+        border-right: solid rgba(255, 255, 255, 0) 0px;
+    }
+}
+
+/*Contenedor Proyectos*/
+#proyectos{
+    display: grid;
+    width: 70%;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.contenedor_proyectos{
+    background-color: #C2E7D9;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.contenedor_proyectos img{
+    width: 50%;
+    height: auto;
+}
+
+/*Realizar el responsive*/
+@media screen and (max-width:1100px) {
+    #icono_menu {
+        display: flex;
+    }
+
+    #barra_navegar {
+        display: none;
+    }
+
+    #sobre_mi {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+    }
+
+    #lenguajes {
+        display: grid;
+        width: 70%;
+        gap: 20px;
+        grid-template-columns: repeat(3, 25%);
+        grid-template-rows: repeat(2, 50%);
+    }
+
+    #lenguajes img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #sobreMi img {
+        width: 90%;
+    }
+}

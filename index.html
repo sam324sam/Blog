@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog epico</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="app.js"></script>
 </head>
+
 <body>
-    
+    <header>
+        <div class="contenedor">
+            <div id="cabecera">
+                <img src="asset/logo.png" alt="logo" width="90px" height="55px">
+                <div id="barra_navegar">
+                    <li><a href="">Sobre mi</a></li>
+                    <li><a href="">Lenguajes</a></li>
+                    <li><a href="">Proyectos</a></li>
+                    <li><a href="">Contacto</a></li>
+                </div>
+                <div id="enlaceGit">
+                    <a href="">Repositorio Github</a>
+                </div>
+                <div id="icono_menu" onclick="menu(this)">
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="contenido_menu">
+            <div class="contenidos_menu"><span></span>
+                <li><a href="">Sobre mi</a></li>
+            </div>
+            <div class="contenidos_menu"><span></span>
+                <li><a href="">Lenguajes</a></li>
+            </div>
+            <div class="contenidos_menu"><span></span>
+                <li><a href="">Proyectos</a></li>
+            </div>
+            <div class="contenidos_menu"><span></span>
+                <li><a href="">Contacto</a></li>
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <div id="sobre_mi">
+                <div id="informacion">
+                    <h1>Hola soy Goku</h1>
+                    <p>Tengo hambre wesadasdasdawdqeqwdqwdqawfqa qwf qwf qwdqwdasdqwd efg wrg wgqwefqwef qefer ger
+                        qwefedee we </p>
+                </div>
+                <img src="asset/meme.webp" alt="meme" width="400px">
+            </div>
+            <div id="titulo_lenguajes">
+                <h1>Legunaje que controlo <span id="nombre"></span><span id="nombre_lenguaje"></span><span
+                        id="span_escribir"></span></h1>
+            </div>
+            <div id="lenguajes">
+                <img src="asset/html-5.png" alt="html5">
+                <img src="asset/css-3.png" alt="css">
+                <img src="asset/js.png" alt="js">
+                <img src="asset/java.png" alt="java">
+                <img src="asset/servidor-sql.png" alt="sql">
+                <img src="asset/php.png" alt="php">
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <div id="proyectos">
+                <div class="contenedor_proyectos">
+                    <img src="asset/img_proyectos/connect-4.webp" alt="">
+                </div>
+                <div class="contenedor_proyectos">
+                    <img src="asset/img_proyectos/connect-4.webp" alt="">
+                </div>
+                <div class="contenedor_proyectos">
+                    <img src="asset/img_proyectos/connect-4.webp" alt="">
+                </div>
+                <div class="contenedor_proyectos">
+                    <img src="asset/img_proyectos/connect-4.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
