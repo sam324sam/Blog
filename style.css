@@ -1,0 +1,174 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6e6e6;
+    margin: 0;
+    min-width: 620px;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+.encabezado {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.titulo{
+    color: white;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navegacion {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.item_navegacion {
+    margin: 0 15px;
+}
+
+.enlace_navegacion {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.enlace_navegacion:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.seccion_sobre_mi {
+    padding: 50px 0;
+}
+
+.subtitulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fila, .habilidades {
+    display: flex;
+    align-items: center;
+}
+
+.columna {
+    flex: 1;
+    margin: auto;
+}
+
+.imagen_perfil {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.seccion_habilidades {
+    background-color: #e9ecef;
+    padding: 50px 0;
+}
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icono_habilidad {
+    width: 120px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.icono_habilidad:hover {
+    transform: scale(1.1);
+}
+
+.seccion_proyectos {
+    padding: 50px 0;
+}
+
+.contenedor_proyectos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.tarjeta {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 400px;
+    flex-direction: column;
+    justify-content: space-around;
+    width: auto;
+    padding: 10px;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.imagen_tarjeta {
+    width: 90%;
+    min-width: 300px;
+    margin: auto;
+    height: auto;
+}
+
+.contenido_tarjeta {
+    padding: 15px;
+}
+
+.titulo_tarjeta {
+    margin: 0;
+    font-weight: bold;
+}
+
+.descripcion_tarjeta {
+    color: #6c757d;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+.seccion_contacto {
+    background-color: #343a40;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 15px 0;
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco epico</title>
+    <style>
+        /*Estilos basicos para la paguina*/
+        html{
+            min-width: 790px;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+            background-color: red;
+            padding: 5px;
+            color: white;
+            border-radius: 5px;
+        }
+        button{
+            margin: auto;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #contenedor{
+            margin: auto;
+            margin-top: 40px;
+            height: 200px;
+            display:flex;
+            flex-direction: column;
+            background-color: rgb(85, 115, 185);
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+            transition: 1s scale();/*No me acuerdo muy bien de esta sintaxis*/
+        }
+
+        #contenedor:hover {
+            scale: 1.1;
+        }
+
+        #cabecera{
+            position: relative;
+            margin:auto;
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #5573b9;
+            border-radius: 5px;
+        }
+
+        #cabecera h2{
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-left: 4px solid black;
+            border-right: 4px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let historialTrans1 = ' ';
+        let historialTrans2 = ' ';
+        let cuenta1 = 0;
+        let cuenta2 = 0;
+        function inicio(params) { //Ingresar los saldos de las dos cuentas 
+            var saldo = 0;
+            do {
+                saldo = prompt('Ingrese el saldo de la cuenta 1');
+            } while (!validarNumeros(saldo)); //Le pido el saldo hasta que sea valida la entrada
+            cuenta1 = saldo;
+            do {
+                saldo = prompt('Ingrese el saldo de la cuenta 2');
+            } while (!validarNumeros(saldo));
+            cuenta2 = saldo;
+            alert('Saldo 1 ' + cuenta1 + '$ Saldo 2 ' + cuenta2 + '$');
+            cuenta1 = parseFloat(cuenta1); // Volver un numero la cuenta para que no lo concatene enves de sumar
+            cuenta2 = parseFloat(cuenta2);
+            menu()
+        }
+        function menu() { //Entrada al menu de opciones
+            var opcion = 's';
+            do {
+                opcion = prompt(' A) Consultar saldo \n B)Depositar dinero \n C)Retirar dinero \n D)Ver historial de transacciones \n E) Transferir dinero \n S) Salir').toLocaleUpperCase();
+                switch (opcion) {
+                    case "A":
+                        consultarSaldo();
+                        break;
+                    case "B":
+                        depositarDinero();
+                        break;
+                    case "C":
+                        retirarDinero();
+                        break;
+                    case "D":
+                        historial();
+                        break;
+                    case "E":
+                        transferir()
+                        break;
+                    case "S":
+                        break;
+
+                    default:
+                        alert(' Error de entrada');
+                        break;
+                }
+            } while (opcion != "S");
+        }
+
+        /*Consultar el saldo de la cuenta indicada por el input*/
+        function consultarSaldo() {
+            var opcion = '3';
+            do {
+                opcion = prompt("Ingrese el numero de cuenta a revisar \n 1) Cuenta 1 \n 2) Cuenta 2 \n 3) Salir");
+                switch (opcion) {
+                    case '1':
+                        alert('El saldo de la cuenta 1 es de ' + cuenta1 + '$');
+                        break;
+                    case '2':
+                        alert('El saldo de la cuenta 1 es de ' + cuenta2 + '$');
+                        break;
+                    case '3':
+                        break;
+
+                    default:
+                        alert('Entrada no valida');
+                        break;
+                }
+            } while (opcion != '3');
+        }
+
+        function depositarDinero() {
+            var opcion = '3';
+            var cantidad = 0;
+            var auxiliar = 0;
+            do {
+                opcion = prompt("Ingrese el numero de cuenta a depositar \n 1) Cuenta 1 \n 2) Cuenta 2 \n 3) Salir");
+                switch (opcion) {
+                    case '1':
+                        do {
+                            auxiliar = prompt('Ingrese el tamaño del deposito o S para salir'); // Aqui para salir es S por que no es posible colocar el 3 para salir
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                        } while (!validarNumeros(auxiliar));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans1 = historialTrans1 + 'Deposito: +' + cantidad + ', ';
+                        cuenta1 += cantidad;
+                        alert(' El saldo actual es de ' + cuenta1);
+                        break;
+                    case '2':
+                        do {
+                            auxiliar = prompt('Ingrese el tamaño del deposito o S para salir');
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                        } while (!validarNumeros(auxiliar));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans2 = historialTrans2 + 'Deposito: +' + cantidad + ', ';
+                        cuenta2 += cantidad;
+                        alert(' El saldo actual es de ' + cuenta2);
+                        break;
+                    case '3':
+                        break;
+
+                    default:
+                        alert('Entrada no valida');
+                        break;
+                }
+            } while (opcion != '3');
+        }
+
+        //Funcio de retirar ingreso con comprobacion de que no pueda quedar la cuenta negativa
+        function retirarDinero() {
+            var opcion = '3';
+            var cantidad = 0;
+            var auxiliar = 0;
+            do {
+                opcion = prompt("Ingrese el numero de cuenta a depositar \n 1) Cuenta 1 \n 2) Cuenta 2 \n 3) Salir");
+                switch (opcion) {
+                    case '1':
+                        do {
+                            do {
+                                auxiliar = prompt('Ingrese el tamaño del retiro o S para salir');
+                                if (auxiliar.toLocaleUpperCase() == 'S') { //Dar una salida a la opcion del usuario
+                                    break;
+                                }
+                            } while (!validarNumeros(auxiliar));
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                            if (!(parseFloat(auxiliar) <= cuenta1)) { // Volver a pedir los datos hasta que sea menor o igual la cantidad en cuenta
+                                alert('Dinero en la cuenta insuficiente');
+                            }
+                        } while (!(parseFloat(auxiliar) <= cuenta1));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans1 = historialTrans1 + 'Retirada: -' + cantidad + ', ';
+                        cuenta1 -= cantidad;
+                        alert(' El saldo actual es de ' + cuenta1);
+                        break;
+                    case '2':
+                        do {
+                            do {
+                                auxiliar = prompt('Ingrese el tamaño del retiro o S para salir');
+                                if (auxiliar.toLocaleUpperCase() == 'S') {
+                                    break;
+                                }
+                            } while (!validarNumeros(auxiliar));
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                            if (!(parseFloat(auxiliar) <= cuenta2)) {
+                                alert('Dinero en la cuenta insuficiente');
+                            }
+                        } while (!(parseFloat(auxiliar) <= cuenta2));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans2 = historialTrans2 + 'Retirada: -' + cantidad + ', ';
+                        cuenta2 -= cantidad;
+                        alert(' El saldo actual es de ' + cuenta2);
+                        break;
+                    case '3':
+                        break;
+
+                    default:
+                        alert('Entrada no valida');
+                        break;
+                }
+            } while (opcion != '3');
+        }
+
+        // Ver el historial de la cuenta seleccionada
+        function historial() {
+            var opcion = '3';
+            var cantidad = 0;
+            var auxiliar = 0;
+            do {
+                opcion = prompt("Ingrese el numero de cuenta a mostrar el historial \n 1) Cuenta 1 \n 2) Cuenta 2 \n 3) Salir");
+                switch (opcion) {
+                    case '1':
+                        alert(historialTrans1);
+                        break;
+                    case '2':
+                        alert(historialTrans2);
+                        break;
+                    case '3':
+                        break;
+
+                    default:
+                        alert('Entrada no valida');
+                        break;
+                }
+            } while (opcion != '3');
+        }
+
+        // Realizar transferencias con los usuarios
+        function transferir() {
+            var opcion = '3';
+            var cantidad = 0;
+            var auxiliar = 0;
+            do {
+                opcion = prompt("Ingrese el numero de cuenta de origen \n 1) De la Cuenta 1 a la Cuenta 2\n 2) De la Cuenta 2 a la Cuenta 1\n 3) Salir");
+                switch (opcion) {
+                    case '1':
+                        do {
+                            do {
+                                auxiliar = prompt('Ingrese el tamaño de la transferencia o S para salir');
+                                if (auxiliar.toLocaleUpperCase() == 'S') {
+                                    break;
+                                }
+                            } while (!validarNumeros(auxiliar));
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                            if (!(parseFloat(auxiliar) <= cuenta1)) {
+                                alert('Dinero en la cuenta insuficiente');
+                            }
+                        } while (!(parseFloat(auxiliar) <= cuenta1));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans1 = historialTrans1 + 'Transferencia: -' + cantidad + ', '; // Lo unico que cambia este codigo con el anterior si hubiera mas tiempo lo hubiero
+                        historialTrans2 = historialTrans2 + 'Transferencia: +' + cantidad + ', '; // creado en una funcion aparte para no reciclar tanto codigo 
+                        cuenta1 -= cantidad;
+                        cuenta2 += cantidad;
+                        alert(' El saldo actual es de ' + cuenta1);
+                        break;
+                    case '2':
+                        do {
+                            do {
+                                auxiliar = prompt('Ingrese el tamaño de la transferencia o S para salir');
+                                if (auxiliar.toLocaleUpperCase() == 'S') {
+                                    break;
+                                }
+                            } while (!validarNumeros(auxiliar));
+                            if (auxiliar.toLocaleUpperCase() == 'S') {
+                                break;
+                            }
+                            if (!(parseFloat(auxiliar) <= cuenta2)) {
+                                alert('Dinero en la cuenta insuficiente');
+                            }
+                        } while (!(parseFloat(auxiliar) <= cuenta2));
+                        if (auxiliar.toLocaleUpperCase() == 'S') {
+                            break;
+                        }
+                        cantidad = parseFloat(auxiliar);
+                        historialTrans2 = historialTrans2 + 'Transferencia: -' + cantidad + ', ';
+                        historialTrans1 = historialTrans1 + 'Transferencia: +' + cantidad + ', ';
+                        cuenta2 -= cantidad;
+                        cuenta1 += cantidad;
+                        alert(' El saldo actual es de ' + cuenta2);
+                        break;
+                    case '3':
+                        break;
+
+                    default:
+                        alert('Entrada no valida');
+                        break;
+                }
+            } while (opcion != '3');
+        }
+
+        function validarNumeros(numero) {
+            var prueba = parseFloat(numero);
+            if (isFinite(prueba) && prueba > 0) {
+                return true;
+            } else {
+                alert('Numero no valido o error de entrada');
+                return false;
+            }
+        }
+    </script>
+    <div id="cabecera">
+        <img src="logo.png" alt="Logo si tuviera">
+        <h2>Inicio</h2>
+        <h2>Cuentas</h2>
+        <h2>Quienes somos</h2>
+        <h2>Contacto</h2>
+    </div>
+    <div id="contenedor">
+        <h1>Bienvenido a nuestro banco</h1>
+        <button onclick="inicio()">Pulse aqui para empezar a realizar operaciones</button>
+    </div>
+</body>
+
+</html>
