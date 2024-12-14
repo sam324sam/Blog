@@ -9,14 +9,17 @@
 </head>
 
 <body>
+    <div class="en_desarrollo">
+        <h4>Esta web sigue en desarrollo</h4>
+    </div>
     <!-- Encabezado -->
     <header class="encabezado">
-        <div class="contenedor d-flex justify-content-between align-items-center">
-            <h1 class="titulo">Samuel Moniz Pereira</h1>
+        <div class="contenedor" id="cabecera">
             <nav>
                 <ul class="navegacion">
                     <li class="item_navegacion"><a class="enlace_navegacion" href="#sobre_mi">Sobre mí</a></li>
                     <li class="item_navegacion"><a class="enlace_navegacion" href="#habilidades">Lenguajes</a></li>
+                    <li class="item_navegacion"><img class="logo" src="asset/img_cabecera/logo.png" alt="logo"></li>
                     <li class="item_navegacion"><a class="enlace_navegacion" href="#proyectos">Proyectos</a></li>
                     <li class="item_navegacion"><a class="enlace_navegacion" href="#contacto">Contacto</a></li>
                 </ul>
@@ -28,18 +31,14 @@
     <section class="seccion_sobre_mi" id="sobre_mi">
         <div class="contenedor">
             <h2 class="subtitulo">Sobre mí</h2>
-            <div class="fila">
-                <div class="columna">
-                    <p>
-                        Soy estudiante de segundo año del ciclo formativo de grado superior en Desarrollo
-                        de Aplicaciones Web (DAW). Tengo experiencia en diseño y desarrollo de aplicaciones web,
-                        bases de datos y gestión de proyectos. Busco realizar prácticas para aplicar mis habilidades
-                        en entornos reales y continuar desarrollando mis capacidades técnicas.
-                    </p>
-                </div>
-                <div class="columna">
-                    <img class="imagen_perfil" src="https://via.placeholder.com/300" alt="Samuel Moniz Pereira">
-                </div>
+            <div class="contenedor_sobreMi">
+                <p class="texto_sobreMi">
+                    Soy estudiante de segundo año del ciclo formativo de grado superior en Desarrollo
+                    de Aplicaciones Web (DAW). Tengo experiencia en diseño y desarrollo de aplicaciones web,
+                    bases de datos y gestión de proyectos. Busco realizar prácticas para aplicar mis habilidades
+                    en entornos reales y continuar desarrollando mis capacidades técnicas.
+                </p>
+                <img class="imagen_perfil" src="asset/img_sobreMi/sobremi.jpg" alt="Samuel Moniz Pereira">
             </div>
         </div>
     </section>
@@ -105,7 +104,8 @@
                     <img class="imagen_tarjeta" src="asset/img_proyectos/Hola_Mundo.png" alt="Hola_Mundo">
                     <div class="contenido_tarjeta">
                         <h4 class="titulo_tarjeta">Mini animacion de escribir</h4>
-                        <p class="descripcion_tarjeta">Mini animacion que simula la escritura de hola mundo usando JS.</p>
+                        <p class="descripcion_tarjeta">Mini animacion que simula la escritura de hola mundo usando JS.
+                        </p>
                         <a class="boton" href="https://sam324sam.github.io/Hola_Mundo/">Ver proyecto</a>
                         <a class="boton" href="https://github.com/sam324sam/Juego_De_Memoria">Ver repositorio</a>
                     </div>
