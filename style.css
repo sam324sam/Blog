@@ -1,11 +1,13 @@
 html {
     width: 100%;
+    min-width: 720px;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: #e6e6e6;
     margin: 0;
+    width: 100%;
 }
 
 h1,
@@ -24,6 +26,7 @@ nav {
     color: white;
     padding: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 #cabecera {
