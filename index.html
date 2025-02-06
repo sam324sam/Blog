@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>Portafolio Samuel Moniz</title>
+    <link rel="icon" href="asset/img_cabecera/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -15,7 +16,7 @@
                 <!--Version escritorio-->
                 <ul class="navegacion_escritorio">
                     <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#sobre_mi">Sobre mí</a>
+                        <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
                     </li>
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
@@ -33,39 +34,52 @@
                 <!--Version movil-->
                 <ul class="navegacion_movil">
                     <li class="item_navegacion logo">
-                        <img class="logo" src="asset/img_cabecera/logo.webp" alt="logo">
+                        <img class="logo" src="asset/img_cabecera/logo.png" alt="logo">
                     </li>
                     <li class="item_navegacion">
-                        <img class="logo" src="asset/img_cabecera/menu.webp" alt="logo">
+                        <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
+                    </li>
+                    <li class="item_navegacion">
+                        <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
+                    </li>
+                    <li class="item_navegacion">
+                        <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="item_navegacion">
+                        <a class="enlace_navegacion" href="#contacto">Contacto</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <!-- Sección Sobre mí -->
-    <section class="seccion_sobre_mi" id="sobre_mi">
-        <h2 class="subtitulo">Sobre mí</h2>
+    <!-- Sección Conóceme -->
+    <span id="conoceme"></span>
+    <section class="seccion_conoceme">
+        <h2 class="subtitulo">Conóceme</h2>
         <div class="contenedor_sobreMi">
             <h4 class="titulos_sobreMi" data-id="1">¿Quién soy?</h4>
-            <div class="conteido_sobreMi" id="1">
+            <div class="conteido_sobreMi" id="1" style="background-image: url('asset/img_sobreMi/quiensoy.jpg');">
                 <p class="texto_sobreMi">
                     Soy estudiante de segundo año en Desarrollo de Aplicaciones Web (DAW), con experiencia en diseño y desarrollo de aplicaciones web, bases de datos y gestión de proyectos. Busco realizar prácticas para aplicar mis habilidades en entornos reales y seguir creciendo profesionalmente.
                 </p>
-                <img src="asset/img_sobreMi/quiensoy.jpg" alt="Quien soy" class="img_sobreMi">
             </div>
             <h4 class="titulos_sobreMi" data-id="2">¿Cuáles son mis intereses?</h4>
-            <div class="conteido_sobreMi" id="2">
+            <div class="conteido_sobreMi" id="2" style="background-image: url('asset/img_sobreMi/intereses.jpg');">
                 <p class="texto_sobreMi">
                     Me apasiona el desarrollo front-end, la creación de interfaces intuitivas y el uso de tecnologías web innovadoras. También tengo interés en la programación back-end y la gestión de bases de datos.
                 </p>
-                <img src="asset/img_sobreMi/intereses.jpg" alt="intereses" class="img_sobreMi">
             </div>
             <h4 class="titulos_sobreMi" data-id="3">¿Qué busco?</h4>
-            <div class="conteido_sobreMi" id="3">
+            <div class="conteido_sobreMi" id="3" style="background-image: url('asset/img_sobreMi/quebusco.jpg');">
                 <p class="texto_sobreMi">
                     Busco oportunidades de prácticas donde pueda aplicar mis conocimientos y aprender de expertos en el área del desarrollo web. Mi objetivo es crecer profesionalmente y contribuir al éxito de un equipo.
                 </p>
-                <img src="asset/img_sobreMi/quebusco.jpg" alt="Que busco" class="img_sobreMi">
+            </div>
+            <h4 class="titulos_sobreMi" data-id="4">¿Saber más?</h4>
+            <div class="conteido_sobreMi" id="4" style="background-image: url('asset/img_sobreMi/quebusco.jpg');">
+                <p class="texto_sobreMi">
+                    Si te interesa conocer más sobre mi experiencia, habilidades y proyectos anteriores, ¡no dudes en revisar mi currículum!
+                </p>
             </div>
         </div>
     </section>
@@ -76,14 +90,17 @@
             const multimedia = $('#' + id);
             if (multimedia.is(':visible')) {
                 $(multimedia).slideUp();
+                $(this).removeClass('activo');
             } else {
                 $(multimedia).slideDown();
+                $(this).addClass('activo');
             }
         });
     </script>
 
     <!-- Sección Habilidades -->
-    <section class="seccion_habilidades" id="habilidades">
+    <span id="habilidades"></span>
+    <section class="seccion_habilidades">
         <div class="contenedor">
             <h2 class="subtitulo">Lenguajes que manejo</h2>
             <div class="habilidades">
@@ -98,7 +115,8 @@
     </section>
 
     <!-- Sección Proyectos -->
-    <section class="seccion_proyectos" id="proyectos">
+    <span id="proyectos"></span>
+    <section class="seccion_proyectos">
         <div class="contenedor">
             <h2 class="subtitulo">Proyectos</h2>
             <div class="contenedor_proyectos">
@@ -164,14 +182,46 @@
         </div>
     </section>
 
+    <script>
+        $(document).ready(function() {
+            $(window).on('scroll', function() {
+                var proyectosOffset = $('#proyectos').offset().top;
+                var windowHeight = $(window).height();
+                var scrollPosition = $(window).scrollTop();
+                if (scrollPosition + windowHeight > proyectosOffset) {
+                    $('.tarjeta').each(function(index) {
+                        var tarjeta = $(this);
+                        setTimeout(function() {
+                            tarjeta.addClass('aparecer');
+                        }, index * 400);
+                    });
+                    $(window).off('scroll');
+                }
+            });
+        });
+    </script>
+
+    <!-- Sección Contacto -->
     <!-- Sección Contacto -->
     <section class="seccion_contacto" id="contacto">
         <div class="contenedor">
             <h2 class="subtitulo">Contacto</h2>
-            <p>¿Quieres trabajar conmigo? Escríbeme.</p>
-            <a class="boton" href="https://github.com/sam324sam">Mi GitHub</a>
+            <p>¿Quieres trabajar conmigo? Escríbeme por cualquiera de mis redes.</p>
+            <div class="redes">
+                <!-- Iconos con enlaces -->
+                <a href="https://github.com/sam324sam" class="icono">
+                    <img src="asset/img_contacto/github.png" alt="github">
+                </a>
+                <a href="www.linkedin.com/in/samuel-moniz-pereira" class="icono">
+                    <img src="asset/img_contacto/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:samuel324moniz@gmail.com" class="icono">
+                    <img src="asset/img_contacto/email.png" alt="email">
+                </a>
+            </div>
         </div>
     </section>
+
 </body>
 
 </html>

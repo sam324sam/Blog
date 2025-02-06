@@ -1,11 +1,13 @@
 /* SECCIÓN: HTML y BODY */
-html, body {
+html,
+body {
     width: 100%;
     min-width: 580px;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,8 +22,8 @@ h3 {
     color: #343a40;
 }
 
-.subtitulo{
-    text-align: center;
+section{
+    margin-top: 144px;
 }
 
 /* SECCIÓN: ENCABEZADO */
@@ -33,10 +35,14 @@ nav {
 }
 
 header {
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
+    position: fixed;
     background-color: #1b1e23;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 #cabecera {
@@ -63,6 +69,7 @@ header {
 
 /* SECCIÓN: NAVEGACIÓN (MENÚ) */
 .navegacion_escritorio {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,9 +79,12 @@ header {
     padding: 0;
 }
 
-.navegacion_movil{
+.navegacion_movil {
     display: none;
     list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
 .item_navegacion {
@@ -99,9 +109,10 @@ header {
     border-radius: 50%;
 }
 
+/* Responsive cabecera*/
 @media (max-width: 1070px) {
 
-    header .contenedor{
+    header .contenedor {
         height: 140px;
     }
 
@@ -115,18 +126,24 @@ header {
         justify-content: space-between;
     }
 
-    .item_navegacion {
+    .enlace_navegacion {
+        padding: 5px 10px;
     }
 
-    .logo {
-        width: 70px;
+    .item_navegacion{
+        width: 100%;
+    }
+
+    .logo img{
+        width: 80px;
+        height: auto;
     }
 }
+
 /* Sección Sobre Mí */
 .seccion_sobre_mi {
     padding: 50px 0;
     background-color: #ffffff;
-    margin-top: 30px;
 }
 
 .subtitulo {
@@ -157,28 +174,43 @@ header {
     cursor: pointer;
     margin: 0;
     text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.activo {
+    transform: scale(1.1);
+    background-color: #343a40; /* Un tono más oscuro */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .texto_sobreMi {
+    margin: 0px;
     font-size: 1rem;
-    color: #666;
+    color: #ffffff;
     line-height: 1.8;
-    padding: 20px;
-    background-color: #ffffff;
+    padding: 50px;
+    background-color: #443737d0;
     border-radius: 8px;
 }
 
 .img_sobreMi {
     width: 100%;
-    height: 250px;
+    height: 500px;
     object-fit: cover;
     border-radius: 8px;
     margin-top: 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.conteido_sobreMi{
+.conteido_sobreMi {
     display: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 49vh;
+    width: 100%;
+    margin: 0;
 }
 
 /* SECCIÓN: HABILIDADES */
@@ -207,7 +239,6 @@ header {
 .seccion_proyectos {
     padding: 50px 0;
 }
-
 .contenedor_proyectos {
     display: flex;
     flex-wrap: wrap;
@@ -222,18 +253,21 @@ header {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
     display: flex;
     flex-grow: 1;
-    flex-basis: 400px;
+    flex-basis: 300px;
     flex-direction: column;
     justify-content: space-around;
     width: auto;
     padding: 10px;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Desplazar hacia abajo */
+    transition: opacity 2s ease, transform 2s ease; /* Transición para opacidad y movimiento */
 }
 
-.tarjeta:hover {
-    transform: translateY(-5px);
+.tarjeta.aparecer {
+    opacity: 1; /* Mostrar cuando se añade la clase */
+    transform: translateY(0); /* Volver a la posición original */
 }
 
 .imagen_tarjeta {
@@ -284,4 +318,17 @@ header {
     background-color: #f8f9fa;
     text-align: center;
     padding: 15px 0;
+}
+
+/* Contenedor de los iconos */
+.redes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.icono{
+    width: 100px;
+    filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 10px #384244) drop-shadow(0 0 5px #324549);
 }
