@@ -1,18 +1,12 @@
 /* SECCIÓN: HTML y BODY */
-html,
 body {
     width: 100%;
     min-width: 300px;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #d9d9da;
     scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e6e6e6;
 }
 
 /* SECCIÓN: TIPOGRAFÍA */
@@ -114,7 +108,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 60px;
-    height: 60px;
+    height: 45px;
     background: none;
     border: none;
     cursor: pointer;
@@ -122,7 +116,7 @@ header {
 }
 
 .boton_menu_desplegable .bar {
-    width: 100%;
+    width: 100vh;
     height: 4px;
     background-color: white;
 }
@@ -130,7 +124,7 @@ header {
 .menu_desplegable {
     display: none;
     position: absolute;
-    top: 165px;
+    top: 135px;
     right: 0;
     background-color: #1b1e23de;
     width: 100%;
@@ -145,7 +139,7 @@ header {
     transition: transform 0.9s ease, opacity 0.9s ease, box-shadow 0.9s ease;
 }
 
-.menu_desplegable li{
+.menu_desplegable li a{
     margin-top: 10px;
     width: 100%;
     text-align: center;
@@ -167,12 +161,16 @@ header {
     .boton_menu_desplegable {
         display: flex;
     }
+
+    .logo img{
+        width: 80px;
+    }
 }
 
 /* Sección Sobre Mí */
 .seccion_conoceme {
     padding: 50px 0;
-    background-color: #ffffff;
+    background-color: #ffffff98;
     margin-top: 200px;
 }
 
@@ -245,7 +243,7 @@ header {
 
 /*Seccion servicios*/
 .seccion_servicios {
-    background-color: #f4f4f4;
+    background-color: #ffffff98;
     padding: 50px 0;
 }
 
@@ -297,7 +295,7 @@ header {
 
 /* SECCIÓN: HABILIDADES */
 .seccion_habilidades {
-    background-color: #e9ecef;
+    background-color: #ffffff98;
     padding: 50px 0;
 }
 
