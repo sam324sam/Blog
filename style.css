@@ -1,10 +1,11 @@
 /* SECCIÓN: HTML y BODY */
-html, body{
+html, body {
     width: 100%;
+    min-width: 580px;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    min-width: 500px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
 }
 
 body {
@@ -31,12 +32,11 @@ nav {
     width: 100%;
 }
 
-.encabezado {
-    background-color: #343a40;
+header {
+    background-color: #1b1e23;
     color: white;
-    padding: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
 }
 
 #cabecera {
@@ -63,132 +63,118 @@ nav {
 
 /* SECCIÓN: NAVEGACIÓN (MENÚ) */
 .navegacion_escritorio {
-    list-style-type: none;
-    gap: 90px;
-    padding: 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    margin: auto;
+    width: 90%;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navegacion_movil{
+    display: none;
+    list-style-type: none;
 }
 
 .item_navegacion {
-    margin: 10px;
+    margin: 0 15px;
 }
 
 .enlace_navegacion {
     color: white;
     text-decoration: none;
-    padding: 10px 10px;
-    transition: background-color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .enlace_navegacion:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #5c636b;
+    transform: scale(1.05);
+}
+
+.logo img {
+    width: 120px;
+    border-radius: 50%;
 }
 
 @media (max-width: 1070px) {
+
+    header .contenedor{
+        height: 140px;
+    }
+
     .navegacion_escritorio {
-        gap: 0px;
-        padding: 10px;
-        list-style: none;
-        font-size: 15px;
+        display: none;
+    }
+
+    .navegacion_movil {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     .item_navegacion {
-        width: 85px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .logo {
-        width: 80px;
-        margin: auto;
+        width: 70px;
     }
 }
-
-/* SECCIÓN: SOBRE MÍ */
+/* Sección Sobre Mí */
 .seccion_sobre_mi {
     padding: 50px 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
+    margin-top: 30px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 30px;
 }
 
 .contenedor_sobreMi {
-    width: 70%;
-    height: 700px;
-    margin: auto;
-    position: relative;
-    background-color: #1a1c1f38;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.carrusel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.item_carrusel {
-    min-width: 100%;
-    height: 700px;
-    box-sizing: border-box;
-    padding: 10px 70px;
-    background-color: e1e1e1;
-    color: #000000;
+.titulos_sobreMi {
+    font-size: 1.25rem;
+    background-color: #1b1e23;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
     text-align: center;
-}
-
-.img_carrusel{
-    width: 100%;
-}
-
-#intereses{
-    
-}
-
-#quien_soy{
-    
-}
-
-#que_busco{
-
-}
-
-.item_carrusel h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
 }
 
 .texto_sobreMi {
     font-size: 1rem;
-    line-height: 1.6;
-    text-align: justify;
+    color: #666;
+    line-height: 1.8;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
 }
 
-.boton_carrusel {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.boton_carrusel:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.boton_carrusel.izquierda {
-    left: 10px;
-}
-
-.boton_carrusel.derecha {
-    right: 10px;
+.img_sobreMi {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* SECCIÓN: HABILIDADES */
@@ -283,7 +269,7 @@ nav {
 
 /* SECCIÓN: CONTACTO */
 .seccion_contacto {
-    background-color: #343a40;
+    background-color: #1b1e23;
     color: white;
     padding: 50px 0;
     text-align: center;
@@ -294,12 +280,4 @@ nav {
     background-color: #f8f9fa;
     text-align: center;
     padding: 15px 0;
-}
-
-.en_desarrollo {
-    padding: 1px;
-    margin: 0;
-    background-color: rgb(223, 96, 96);
-    padding-left: 20px;
-    font-size: 13px;
 }

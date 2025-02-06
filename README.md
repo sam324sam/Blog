@@ -1,5 +1,3 @@
-![Estado](https://img.shields.io/badge/Estado-En%20proceso-yellow?style=plastic)
-
 # Portfolio - Samuel Moniz Pereira
 
 ¡Bienvenido a mi portfolio! Soy **Samuel Moniz Pereira**, un estudiante de Desarrollo de Aplicaciones Web (DAW) con experiencia en diseño y desarrollo de aplicaciones web, bases de datos y gestión de proyectos. Este sitio presenta algunos de mis proyectos más destacados y las habilidades que manejo.

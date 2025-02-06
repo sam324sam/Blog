@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Samuel Moniz Pereira</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="asset/img_cabecera/logo.png">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
-    <div class="en_desarrollo">
-        <h4>Esta web sigue en desarrollo</h4>
-    </div>
     <!-- Encabezado -->
-    <header class="encabezado">
+    <header>
         <div class="contenedor" id="cabecera">
             <nav>
+                <!--Version escritorio-->
                 <ul class="navegacion_escritorio">
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#sobre_mi">Sobre mí</a>
@@ -24,8 +20,8 @@
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
                     </li>
-                    <li class="item_navegacion">
-                        <img class="logo" src="asset/img_cabecera/logo.png" alt="logo">
+                    <li class="item_navegacion logo">
+                        <img class="logo" src="asset/img_cabecera/logo.webp" alt="logo">
                     </li>
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
@@ -34,79 +30,59 @@
                         <a class="enlace_navegacion" href="#contacto">Contacto</a>
                     </li>
                 </ul>
+                <!--Version movil-->
+                <ul class="navegacion_movil">
+                    <li class="item_navegacion logo">
+                        <img class="logo" src="asset/img_cabecera/logo.webp" alt="logo">
+                    </li>
+                    <li class="item_navegacion">
+                        <img class="logo" src="asset/img_cabecera/menu.webp" alt="logo">
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
-
     <!-- Sección Sobre mí -->
     <section class="seccion_sobre_mi" id="sobre_mi">
-        <div class="contenedor">
-            <h2 class="subtitulo">Sobre mí</h2>
-            <div class="contenedor_sobreMi">
-                <div class="carrusel">
-                    <div class="item_carrusel activo" id="quien_soy">
-                        <h4>¿Quién soy?</h4>
-                        <p class="texto_sobreMi">
-                            Soy estudiante de segundo año del ciclo formativo de grado superior en Desarrollo
-                            de Aplicaciones Web (DAW). Tengo experiencia en diseño y desarrollo de aplicaciones web,
-                            bases de datos y gestión de proyectos. Busco realizar prácticas para aplicar mis habilidades
-                            en entornos reales y continuar desarrollando mis capacidades técnicas.
-                        </p>
-                        <img src="asset/img_sobreMi/quiensoy.jpg" alt="Quien soy" class="img_carrusel">
-                    </div>
-                    <div class="item_carrusel" id="intereses">
-                        <h4>¿Cuáles son mis intereses?</h4>
-                        <p class="texto_sobreMi">
-                            Me apasiona el desarrollo front-end, el diseño de interfaces intuitivas y el uso de nuevas
-                            tecnologías web. También estoy interesado en la programación back-end con enfoque en bases
-                            de datos.
-                        </p>
-                        <img src="asset/img_sobreMi/intereses.jpg" alt="intereses" class="img_carrusel">
-                    </div>
-                    <div class="item_carrusel" id="que_busco">
-                        <h4>¿Qué busco?</h4>
-                        <p class="texto_sobreMi">
-                            Estoy buscando oportunidades de prácticas donde pueda aplicar mis conocimientos y aprender
-                            de profesionales en el campo del desarrollo web. Mi objetivo es contribuir al éxito de un
-                            equipo
-                            mientras mejoro mis habilidades técnicas.
-                        </p>
-                        <img src="asset/img_sobreMi/quebusco.jpg" alt="Que busco" class="img_carrusel">
-                    </div>
-                </div>
-
-                <!-- Botones del carrusel -->
-                <button class="boton_carrusel izquierda">⬅</button>
-                <button class="boton_carrusel derecha">➡</button>
+        <h2 class="subtitulo">Sobre mí</h2>
+        <div class="contenedor_sobreMi">
+            <h4 class="titulos_sobreMi" data-id="1">¿Quién soy?</h4>
+            <div class="conteido_sobreMi" id="1">
+                <p class="texto_sobreMi">
+                    Soy estudiante de segundo año en Desarrollo de Aplicaciones Web (DAW), con experiencia en diseño y desarrollo de aplicaciones web, bases de datos y gestión de proyectos. Busco realizar prácticas para aplicar mis habilidades en entornos reales y seguir creciendo profesionalmente.
+                </p>
+                <img src="asset/img_sobreMi/quiensoy.jpg" alt="Quien soy" class="img_sobreMi">
+            </div>
+            <h4 class="titulos_sobreMi" data-id="2">¿Cuáles son mis intereses?</h4>
+            <div class="conteido_sobreMi" id="2">
+                <p class="texto_sobreMi">
+                    Me apasiona el desarrollo front-end, la creación de interfaces intuitivas y el uso de tecnologías web innovadoras. También tengo interés en la programación back-end y la gestión de bases de datos.
+                </p>
+                <img src="asset/img_sobreMi/intereses.jpg" alt="intereses" class="img_sobreMi">
+            </div>
+            <h4 class="titulos_sobreMi" data-id="3">¿Qué busco?</h4>
+            <div class="conteido_sobreMi" id="3">
+                <p class="texto_sobreMi">
+                    Busco oportunidades de prácticas donde pueda aplicar mis conocimientos y aprender de expertos en el área del desarrollo web. Mi objetivo es crecer profesionalmente y contribuir al éxito de un equipo.
+                </p>
+                <img src="asset/img_sobreMi/quebusco.jpg" alt="Que busco" class="img_sobreMi">
             </div>
         </div>
     </section>
 
     <script>
-        const carrusel = document.querySelector('.carrusel');
-        const items = document.querySelectorAll('.item_carrusel');
-        const botonDerecha = document.querySelector('.boton_carrusel.derecha');
-        const botonIzquierda = document.querySelector('.boton_carrusel.izquierda');
 
-        let indice = 0;
 
-        botonDerecha.addEventListener('click', () => {
-            indice = (indice + 1) % items.length;
-            actualizarCarrusel();
+        $('.titulos_sobreMi').click(function () {
+            const id = $(this).data('id');
+            const multimedia = $('#' + id);
+            if (multimedia.is(':visible')) {
+                $(multimedia).slideUp();
+            } else {
+                $(multimedia).slideDown();
+            }
         });
-
-        botonIzquierda.addEventListener('click', () => {
-            indice = (indice - 1 + items.length) % items.length;
-            actualizarCarrusel();
-        });
-
-        function actualizarCarrusel() {
-            const desplazamiento = -indice * 100;
-            carrusel.style.transform = `translateX(${desplazamiento}%)`;
-        }
-
     </script>
-
 
     <!-- Sección Habilidades -->
     <section class="seccion_habilidades" id="habilidades">
@@ -129,7 +105,7 @@
             <h2 class="subtitulo">Proyectos</h2>
             <div class="contenedor_proyectos">
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Conecta4.png" alt="Conecta4">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Conecta4.webp" alt="Conecta4">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Juego Conecta 4</h3>
                         <p class="descripcion_tarjeta">Un juego hecho con HTML, CSS y JavaScript.</p>
@@ -138,7 +114,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Calculadora.png" alt="Calculadora">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Calculadora.webp" alt="Calculadora">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Calculadora Interactiva</h3>
                         <p class="descripcion_tarjeta">Un proyecto interactivo en JavaScript que simula el uso de una
@@ -148,7 +124,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Tres_En_raya.png" alt="Tres_En_raya">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Tres_En_raya.webp" alt="Tres_En_raya">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Juego Tres en raya</h3>
                         <p class="descripcion_tarjeta">Juego con enfoque en lógica de programación.</p>
@@ -157,7 +133,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Juego_De_Memoria.png" alt="Juego_De_Memoria">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Juego_De_Memoria.webp" alt="Juego_De_Memoria">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Juego de memora</h3>
                         <p class="descripcion_tarjeta">Un juego hecho con HTML, CSS y JavaScript.</p>
@@ -166,7 +142,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Hola_Mundo.png" alt="Hola_Mundo">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Hola_Mundo.webp" alt="Hola_Mundo">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Mini animacion de escribir</h3>
                         <p class="descripcion_tarjeta">
@@ -177,13 +153,13 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/movilidad_PHP.png" alt="Movilidad PHP">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/movilidad_PHP.webp" alt="Movilidad PHP">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Ficheros en PHP</h3>
                         <p class="descripcion_tarjeta">
                             Pequeño proyecto en php que simula la gestion de permisos para vehículos para diferentes tipos de usuarios.
                         </p>
-                        <a class="boton" href="https://github.com/sam324sam/Gestion_movilidad">Ver repositorio</a>
+                        <a class="boton" href="https://github.com/sam324sam/Practica1PHP">Ver repositorio</a>
                     </div>
                 </div>
             </div>
