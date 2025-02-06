@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+
     <!-- Encabezado -->
     <header>
         <div class="contenedor" id="cabecera">
@@ -19,16 +20,16 @@
                         <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
                     </li>
                     <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
+                        <a class="enlace_navegacion" href="#servicios">Sevicios</a>
                     </li>
                     <li class="item_navegacion logo">
                         <img class="logo" src="asset/img_cabecera/logo.png" alt="logo">
                     </li>
-                    <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
+                    <li>
+                        <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
                     </li>
                     <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#contacto">Contacto</a>
+                        <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
                     </li>
                 </ul>
                 <!--Version movil-->
@@ -40,20 +41,20 @@
                         <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
                     </li>
                     <li class="item_navegacion">
+                        <a class="enlace_navegacion" href="#servicios">Sevicios</a>
+                    </li>
+                    <li>
                         <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
                     </li>
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
-                    </li>
-                    <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#contacto">Contacto</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <!-- Sección Conóceme -->
-    <span id="conoceme"></span>
+    <span id="conoceme" style="position: absolute; top: 0px;"></span>
     <section class="seccion_conoceme">
         <h2 class="subtitulo">Conóceme</h2>
         <div class="contenedor_sobreMi">
@@ -76,10 +77,11 @@
                 </p>
             </div>
             <h4 class="titulos_sobreMi" data-id="4">¿Saber más?</h4>
-            <div class="conteido_sobreMi" id="4" style="background-image: url('asset/img_sobreMi/quebusco.jpg');">
+            <div class="conteido_sobreMi" id="4" style="height: 100%;">
                 <p class="texto_sobreMi">
                     Si te interesa conocer más sobre mi experiencia, habilidades y proyectos anteriores, ¡no dudes en revisar mi currículum!
                 </p>
+                <embed style="border-radius: 20px; margin-top: 10px;" src="asset/img_sobreMi/CurrículumSamuelMonizPereira.pdf" width="100%" height="700px" />
             </div>
         </div>
     </section>
@@ -97,6 +99,60 @@
             }
         });
     </script>
+
+    <!-- Sección mis servicios -->
+    <span id="servicios"></span>
+    <section class="seccion_servicios">
+        <div class="contenedor">
+            <h2 class="subtitulo">Mis Servicios</h2>
+            <div class="contenedor_servicios">
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Diseño de Interfaces Web</h3>
+                    <p class="descripcion_servicio">Desarrollo de interfaces modernas y funcionales utilizando las últimas tecnologías en diseño web, asegurando una experiencia fluida e intuitiva para el usuario.</p>
+                </div>
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Desarrollo Frontend</h3>
+                    <p class="descripcion_servicio">Creación de sitios web responsivos y adaptativos con HTML, CSS y JavaScript.</p>
+                </div>
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Desarrollo Backend</h3>
+                    <p class="descripcion_servicio">Implementación de soluciones backend con PHP o Java para gestionar bases de datos y crear servicios web escalables y seguros.</p>
+                </div>
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Gestión de Bases de Datos</h3>
+                    <p class="descripcion_servicio">Diseño y optimización de bases de datos SQL para garantizar un rendimiento eficiente en aplicaciones web y sistemas de gestión.</p>
+                </div>
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Optimización SEO</h3>
+                    <p class="descripcion_servicio">Optimización de sitios web para mejorar el posicionamiento en motores de búsqueda, asegurando que tus páginas sean fácilmente encontradas por tu público objetivo.</p>
+                </div>
+                <div class="tarjeta_servicio">
+                    <h3 class="titulo_servicio">Soporte Web</h3>
+                    <p class="descripcion_servicio">Mantenimiento y soporte continuo para tu página web, asegurando que se mantenga segura, actualizada y funcionando correctamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            $(window).on('scroll', function() {
+                var serviciosOffset = $('#servicios').offset().top;
+                var windowHeight = $(window).height();
+                var scrollPosition = $(window).scrollTop();
+                if (scrollPosition + windowHeight > serviciosOffset) {
+                    $('.tarjeta_servicio').each(function(index) {
+                        var tarjeta = $(this);
+                        setTimeout(function() {
+                            tarjeta.addClass('aparecer');
+                        }, index * 500);
+                    });
+                    $(window).off('scroll');
+                }
+            });
+            $(window).trigger('scroll');
+        });
+    </script>    
 
     <!-- Sección Habilidades -->
     <span id="habilidades"></span>
@@ -121,7 +177,23 @@
             <h2 class="subtitulo">Proyectos</h2>
             <div class="contenedor_proyectos">
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Conecta4.webp" alt="Conecta4">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Servlet_Inicio.PNG" alt="SeevletJuegosJava">
+                    <div class="contenido_tarjeta">
+                        <h3 class="titulo_tarjeta">Tienda Videojuegos Java</h3>
+                        <p class="descripcion_tarjeta">Este proyecto es una aplicación web que gestiona el stock de una tienda de videojuegos en java.</p>
+                        <a class="boton" href="https://github.com/sam324sam/Tienda_Videojuegos_Java">Ver repositorio</a>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Gestion_Profesores_PHP.PNG" alt="DB PHP">
+                    <div class="contenido_tarjeta">
+                        <h3 class="titulo_tarjeta">Gestion Profesorado PHP</h3>
+                        <p class="descripcion_tarjeta">En este proyecto daremos uso de una DB conjunto a PHP</p>
+                        <a class="boton" href="https://github.com/sam324sam/Gestion_Profesorado_PHP">Ver repositorio</a>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Conecta4.png" alt="Conecta4">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Juego Conecta 4</h3>
                         <p class="descripcion_tarjeta">Un juego hecho con HTML, CSS y JavaScript.</p>
@@ -130,7 +202,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Calculadora.webp" alt="Calculadora">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Calculadora.png" alt="Calculadora">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Calculadora Interactiva</h3>
                         <p class="descripcion_tarjeta">Un proyecto interactivo en JavaScript que simula el uso de una
@@ -149,7 +221,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Juego_De_Memoria.webp" alt="Juego_De_Memoria">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Juego_De_Memoria.png" alt="Juego_De_Memoria">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Juego de memora</h3>
                         <p class="descripcion_tarjeta">Un juego hecho con HTML, CSS y JavaScript.</p>
@@ -158,7 +230,7 @@
                     </div>
                 </div>
                 <div class="tarjeta">
-                    <img class="imagen_tarjeta" src="asset/img_proyectos/Hola_Mundo.webp" alt="Hola_Mundo">
+                    <img class="imagen_tarjeta" src="asset/img_proyectos/Hola_Mundo.png" alt="Hola_Mundo">
                     <div class="contenido_tarjeta">
                         <h3 class="titulo_tarjeta">Mini animacion de escribir</h3>
                         <p class="descripcion_tarjeta">
@@ -202,10 +274,9 @@
     </script>
 
     <!-- Sección Contacto -->
-    <!-- Sección Contacto -->
     <section class="seccion_contacto" id="contacto">
         <div class="contenedor">
-            <h2 class="subtitulo">Contacto</h2>
+            <h2 class="subtitulo" style="color: white;">Contacto</h2>
             <p>¿Quieres trabajar conmigo? Escríbeme por cualquiera de mis redes.</p>
             <div class="redes">
                 <!-- Iconos con enlaces -->

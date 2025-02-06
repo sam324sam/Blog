@@ -141,9 +141,10 @@ header {
 }
 
 /* Sección Sobre Mí */
-.seccion_sobre_mi {
+.seccion_conoceme {
     padding: 50px 0;
     background-color: #ffffff;
+    margin-top: 200px;
 }
 
 .subtitulo {
@@ -211,6 +212,58 @@ header {
     height: 49vh;
     width: 100%;
     margin: 0;
+}
+
+/*Seccion servicios*/
+.seccion_servicios {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.contenedor_servicios {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta_servicio {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.6s ease, transform 1.6s ease;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+}
+
+.tarjeta_servicio:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta_servicio.aparecer {
+    opacity: 1;
+    transform: translateY(0); /* Regresa a su posición original */
+}
+
+.icono_servicio {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.titulo_servicio {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.descripcion_servicio {
+    font-size: 1em;
+    color: #666;
 }
 
 /* SECCIÓN: HABILIDADES */
