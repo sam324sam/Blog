@@ -14,13 +14,13 @@
     <header>
         <div class="contenedor" id="cabecera">
             <nav>
-                <!--Version escritorio-->
+                <!--Versión escritorio-->
                 <ul class="navegacion_escritorio">
                     <li class="item_navegacion">
                         <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
                     </li>
                     <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#servicios">Sevicios</a>
+                        <a class="enlace_navegacion" href="#servicios">Servicios</a>
                     </li>
                     <li class="item_navegacion logo">
                         <img class="logo" src="asset/img_cabecera/logo.png" alt="logo">
@@ -32,27 +32,65 @@
                         <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
                     </li>
                 </ul>
-                <!--Version movil-->
+                <!--Versión móvil-->
                 <ul class="navegacion_movil">
                     <li class="item_navegacion logo">
                         <img class="logo" src="asset/img_cabecera/logo.png" alt="logo">
                     </li>
-                    <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
-                    </li>
-                    <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#servicios">Sevicios</a>
-                    </li>
-                    <li>
-                        <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
-                    </li>
-                    <li class="item_navegacion">
-                        <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
-                    </li>
+                    <button class="boton_menu_desplegable" id="boton_menu_desplegable">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="menu_desplegable">
+                        <li class="item_navegacion">
+                            <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
+                        </li>
+                        <li class="item_navegacion">
+                            <a class="enlace_navegacion" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="item_navegacion">
+                            <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
+                        </li>
+                        <li class="item_navegacion">
+                            <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
+                        </li>
+                    </div>
                 </ul>
             </nav>
         </div>
     </header>
+    
+    <script>
+        $(document).ready(function () {
+            $('.boton_menu_desplegable').click(function () {
+                const menu = $('.menu_desplegable');
+                if (menu.is(':visible')) {
+                    menu.slideUp().css({
+                        opacity: 0,
+                        transform: 'translateY(-20px)'
+                    });
+                } else {
+                    menu.stop(true, true).slideDown().css({
+                        opacity: 1,
+                        transform: 'translateY(0)',
+                        display: 'flex'
+                    });
+                }
+            });
+    
+            // Cierra el menú si se hace clic fuera de él
+            $(document).click(function (event) {
+                if (!$(event.target).closest('.navegacion_movil').length) {
+                    $('.menu_desplegable').slideUp().css({
+                        opacity: 0,
+                        transform: 'translateY(-20px)'
+                    });
+                }
+            });
+        });
+    </script>    
+
     <!-- Sección Conóceme -->
     <span id="conoceme" style="position: absolute; top: 0px;"></span>
     <section class="seccion_conoceme">
