@@ -50,5 +50,7 @@ Si quieres trabajar conmigo o tienes alguna pregunta, no dudes en escribirme. Pu
 - [GitHub](https://github.com/sam324sam)
 
 ---
+## Contribuir al Proyecto
+Para conocer cómo contribuir, revisa nuestras [pautas de contribución](https://github.com/sam324sam/sam324sam/blob/main/CONTRIBUTING.md).
 
 ¡Gracias por visitar mi portfolio!
