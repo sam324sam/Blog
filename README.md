@@ -1,56 +1,59 @@
-# Portfolio - Samuel Moniz Pereira
+# BlogPersonal
 
-¡Bienvenido a mi portfolio! Soy **Samuel Moniz Pereira**, un estudiante de Desarrollo de Aplicaciones Web (DAW) con experiencia en diseño y desarrollo de aplicaciones web, bases de datos y gestión de proyectos. Este sitio presenta algunos de mis proyectos más destacados y las habilidades que manejo.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
 
-## Contenido
+## Development server
 
-1. [Sobre mí](#sobre-mí)
-2. [Habilidades](#habilidades)
-3. [Proyectos](#proyectos)
-4. [Contacto](#contacto)
+To start a local development server, run:
 
-## Sobre mí
+```bash
+ng serve
+```
 
-Soy estudiante de segundo año del ciclo formativo de grado superior en Desarrollo de Aplicaciones Web (DAW). Busco realizar prácticas para aplicar mis habilidades en entornos reales y continuar desarrollando mis capacidades técnicas.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Habilidades
+## Code scaffolding
 
-Tengo experiencia en los siguientes lenguajes de programación y tecnologías:
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-- HTML5
-- CSS3
-- JavaScript
-- PHP
-- SQL
-- Java
+```bash
+ng generate component component-name
+```
 
-## Proyectos
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-Aquí hay una lista de algunos de los proyectos en los que he trabajado:
+```bash
+ng generate --help
+```
 
-1. **[Juego Conecta 4](https://sam324sam.github.io/Conecta_4/)**  
-   Un juego hecho con HTML, CSS y JavaScript.
-   
-2. **[Calculadora Interactiva](https://sam324sam.github.io/Calculadora/)**  
-   Un proyecto interactivo en JavaScript que simula el uso de una calculadora simple.
-   
-3. **[Juego Tres en raya](https://sam324sam.github.io/Tres_En_Raya/)**  
-   Juego con enfoque en lógica de programación.
-   
-4. **[Juego de memoria](https://sam324sam.github.io/Juego_De_Memoria/)**  
-   Un juego hecho con HTML, CSS y JavaScript.
-   
-5. **[Mini animación de escribir](https://sam324sam.github.io/Hola_Mundo/)**  
-   Mini animación que simula la escritura de "Hola mundo" usando JS.
+## Building
 
-## Contacto
+To build the project run:
 
-Si quieres trabajar conmigo o tienes alguna pregunta, no dudes en escribirme. Puedes encontrarme en:
+```bash
+ng build
+```
 
-- [GitHub](https://github.com/sam324sam)
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
----
-## Contribuir al Proyecto
-Para conocer cómo contribuir, revisa nuestras [pautas de contribución](https://github.com/sam324sam/sam324sam/blob/main/CONTRIBUTING.md).
+## Running unit tests
 
-¡Gracias por visitar mi portfolio!
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

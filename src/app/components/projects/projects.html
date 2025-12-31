@@ -1,0 +1,38 @@
+<!-- Seccion Proyectos -->
+<span id="proyectos"></span>
+<section class="seccion_proyectos">
+  <div class="contenedor">
+    <h2 class="subtitulo">Proyectos</h2>
+    <div class="contenedor_proyectos" id="contenedorProyectos">
+      @for (proyecto of proyectos; track $index) {
+      <div class="tarjeta_proyecto">
+        <div class="contenedor_imagen">
+          <img class="imagen_tarjeta" [src]="proyecto.imagen" [alt]="proyecto.titulo" />
+          <div class="overlay_imagen">
+            <span class="ver_mas">Ver detalles</span>
+          </div>
+        </div>
+
+        <div class="contenido_tarjeta">
+          <h3 class="titulo_tarjeta">{{ proyecto.titulo }}</h3>
+          <p class="descripcion_tarjeta">{{ proyecto.descripcion }}</p>
+
+          <div class="contenedor_botones">
+            @if (proyecto.web) {
+            <a [href]="proyecto.web" class="boton boton_primario">
+              <i class="fa-solid fa-globe icono_boton"></i>
+              Probar en la web
+            </a>
+            }
+
+            <a [href]="proyecto.repo" class="boton boton_secundario" target="_blank">
+              <i class="fa-solid fa-box-archive icono_boton"></i>
+              Ver repositorio
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

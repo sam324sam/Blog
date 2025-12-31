@@ -1,0 +1,82 @@
+/* Sección Sobre Mí */
+.seccion_conoceme {
+  padding: 50px 0;
+}
+
+.contenedor_sobreMi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  gap: 1em;
+  margin: 0 auto;
+}
+
+.titulos_sobreMi {
+  width: 80%;
+  font-size: 1.25rem;
+  background-color: var(--color-gris);
+  color: black;
+  padding: 15px;
+  border-radius: 1em;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulos_sobreMi:hover,
+.activo {
+  transform: scale(1.09);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titulos_sobreMi:hover {
+  background-color: var(--color-morado);
+  color: white;
+}
+
+.activo {
+  background-color: var(--color-morado-oscuro);
+  color: white;
+}
+
+.texto_sobreMi {
+  margin: 0px;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  padding: 50px;
+  background-color: #645252d0;
+  border-radius: 8px;
+}
+
+.conteido_sobreMi {
+  opacity: 0;
+  transform: translateY(-30px);
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 89%;
+  height: 0;
+  border-radius: 8px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.abierto {
+  min-height: 25em;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.abierto:last-child {
+  height: auto;
+}

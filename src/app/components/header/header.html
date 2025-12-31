@@ -1,0 +1,61 @@
+<header [class.quitar-box-shadow]="menuAbierto">
+  <div class="contenedor" id="cabecera">
+    <nav>
+      <!-- Versión escritorio -->
+      <ul class="navegacion_escritorio">
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#conoceme">Conóceme</a>
+        </li>
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#habilidades">Lenguajes</a>
+        </li>
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#bienvenida">
+            <img class="logo" src="assets/img_cabecera/logo.png" alt="logo" href="#" />
+          </a>
+        </li>
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#proyectos">Proyectos</a>
+        </li>
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#servicios">Servicios</a>
+        </li>
+      </ul>
+
+      <!-- Versión móvil -->
+      <ul class="navegacion_movil">
+        <li class="item_navegacion">
+          <a class="enlace_navegacion" href="#bienvenida">
+            <img class="logo" src="assets/img_cabecera/logo.png" alt="logo" />
+          </a>
+        </li>
+
+        <button class="boton_menu_desplegable" (click)="toggleMenu()">
+          <span class="bar" [class.abierto]="menuAbierto"></span>
+          <span class="bar" [class.abierto]="menuAbierto"></span>
+          <span class="bar" [class.abierto]="menuAbierto"></span>
+        </button>
+
+        <div
+          class="menu_desplegable"
+          [class.abierto]="menuAbierto"
+          (click)="$event.stopPropagation()"
+          (keydown)="$event.stopPropagation()"
+        >
+          <li class="item_navegacion">
+            <a class="enlace_navegacion" href="#conoceme" (click)="cerrarMenu()">Conóceme</a>
+          </li>
+          <li class="item_navegacion">
+            <a class="enlace_navegacion" href="#habilidades" (click)="cerrarMenu()">Lenguajes</a>
+          </li>
+          <li class="item_navegacion">
+            <a class="enlace_navegacion" href="#proyectos" (click)="cerrarMenu()">Proyectos</a>
+          </li>
+          <li class="item_navegacion">
+            <a class="enlace_navegacion" href="#servicios" (click)="cerrarMenu()">Servicios</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>

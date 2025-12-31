@@ -1,0 +1,87 @@
+<!-- Sección Conóceme -->
+<span id="conoceme" style="position: absolute; top: 0px"></span>
+<section class="seccion_conoceme">
+  <h2 class="subtitulo">Conóceme</h2>
+  <div class="contenedor_sobreMi">
+    <h4
+      class="titulos_sobreMi"
+      [class.activo]="contentToShow[0]"
+      (click)="showContent(0)"
+      (keydown)="showContent(0)"
+    >
+      ¿Quién soy?
+    </h4>
+
+    <div
+      class="conteido_sobreMi"
+      [class.abierto]="contentToShow[0]"
+      style="background-image: url('assets/img_sobreMi/quiensoy.jpg')"
+    >
+      <p class="texto_sobreMi">
+        Soy estudiante de segundo año en Desarrollo de Aplicaciones Web (DAW), con experiencia en
+        diseño y desarrollo de aplicaciones web, bases de datos y gestión de proyectos. Busco
+        realizar prácticas para aplicar mis habilidades en entornos reales y seguir creciendo
+        profesionalmente.
+      </p>
+    </div>
+
+    <h4
+      class="titulos_sobreMi"
+      [class.activo]="contentToShow[1]"
+      (click)="showContent(1)"
+      (keydown)="showContent(1)"
+    >
+      ¿Cuáles son mis intereses?
+    </h4>
+    <div
+      class="conteido_sobreMi"
+      [class.abierto]="contentToShow[1]"
+      style="background-image: url('assets/img_sobreMi/intereses.jpg')"
+    >
+      <p class="texto_sobreMi">
+        Me apasiona el desarrollo front-end, la creación de interfaces intuitivas y el uso de
+        tecnologías web innovadoras. También tengo interés en la programación back-end y la gestión
+        de bases de datos.
+      </p>
+    </div>
+    <h4
+      class="titulos_sobreMi"
+      [class.activo]="contentToShow[2]"
+      (click)="showContent(2)"
+      (keydown)="showContent(2)"
+    >
+      ¿Qué busco?
+    </h4>
+    <div
+      class="conteido_sobreMi"
+      [class.abierto]="contentToShow[2]"
+      style="background-image: url('assets/img_sobreMi/quebusco.jpg')"
+    >
+      <p class="texto_sobreMi">
+        Busco oportunidades de prácticas donde pueda aplicar mis conocimientos y aprender de
+        expertos en el área del desarrollo web. Mi objetivo es crecer profesionalmente y contribuir
+        al éxito de un equipo.
+      </p>
+    </div>
+    <h4
+      class="titulos_sobreMi"
+      [class.activo]="contentToShow[3]"
+      (click)="showContent(3)"
+      (keydown)="showContent(3)"
+    >
+      ¿Saber más?
+    </h4>
+    <div class="conteido_sobreMi" [class.abierto]="contentToShow[3]">
+      <p class="texto_sobreMi">
+        Si te interesa conocer más sobre mi experiencia, habilidades y proyectos anteriores, ¡no
+        dudes en revisar mi currículum!
+      </p>
+      <embed
+        style="border-radius: 20px; margin-top: 10px"
+        src="assets/img_sobreMi/CVSamuelMoniz.pdf"
+        width="100%"
+        height="700px"
+      />
+    </div>
+  </div>
+</section>

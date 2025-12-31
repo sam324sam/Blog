@@ -1,0 +1,303 @@
+/* SECCIÓN: PROYECTOS */
+.seccion_proyectos {
+  padding: 50px 0;
+}
+
+.contenedor_proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  width: 90%;
+  margin: 2em auto;
+}
+
+/* Tarjeta de proyecto */
+.tarjeta_proyecto {
+  background: rgba(42, 25, 73, 0.25);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(170, 153, 200, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Animaciones de entrada */
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: aparecerProyecto 0.6s ease forwards;
+}
+
+/* Efecto de brillo en el borde */
+.tarjeta_proyecto::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, transparent, var(--color-morado-claro), transparent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tarjeta_proyecto:hover::before {
+  opacity: 1;
+}
+
+.tarjeta_proyecto:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-morado-claro);
+  box-shadow: 0 12px 35px rgba(84, 50, 145, 0.4), 0 0 25px rgba(170, 153, 200, 0.2);
+}
+
+/* Contenedor de imagen - MEJORADO */
+.contenedor_imagen {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Ratio 16:9 */
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(42, 25, 73, 0.5), rgba(84, 50, 145, 0.3));
+}
+
+.imagen_tarjeta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubre todo el espacio manteniendo proporción */
+  object-position: center; /* Centra la imagen */
+  transition: transform 0.5s ease, filter 0.3s ease;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.tarjeta_proyecto:hover .imagen_tarjeta {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+/* Overlay de la imagen */
+.overlay_imagen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(42, 25, 73, 0.7) 70%,
+    rgba(42, 25, 73, 0.95) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5em;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tarjeta_proyecto:hover .overlay_imagen {
+  opacity: 1;
+}
+
+.ver_mas {
+  color: var(--color-morado-claro);
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Contenido de la tarjeta */
+.contenido_tarjeta {
+  padding: 1.8em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-grow: 1;
+}
+
+.titulo_tarjeta {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ffffff, var(--color-morado-claro));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.tarjeta_proyecto:hover .titulo_tarjeta {
+  transform: translateX(5px);
+}
+
+.descripcion_tarjeta {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 0.95em;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Contenedor de botones */
+.contenedor_botones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 1em;
+}
+
+/* Botones */
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.9em 1.5em;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.icono_boton {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.boton:hover .icono_boton {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Botón primario */
+.boton_primario {
+  background: linear-gradient(135deg, var(--color-morado), var(--color-morado-oscuro));
+  color: white;
+  box-shadow: 0 4px 15px rgba(84, 50, 145, 0.3);
+}
+
+.boton_primario::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-morado-claro), var(--color-morado));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.boton_primario:hover::before {
+  opacity: 1;
+}
+
+.boton_primario:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(84, 50, 145, 0.5);
+}
+
+.boton_primario span,
+.boton_primario:hover {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón secundario */
+.boton_secundario {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-morado-claro);
+  border-color: var(--color-morado-claro);
+  backdrop-filter: blur(5px);
+}
+
+.boton_secundario:hover {
+  background: rgba(170, 153, 200, 0.15);
+  border-color: var(--color-morado-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(170, 153, 200, 0.3);
+}
+
+@keyframes aparecerProyecto {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tarjeta_proyecto:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.tarjeta_proyecto:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.tarjeta_proyecto:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.tarjeta_proyecto:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.tarjeta_proyecto:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.tarjeta_proyecto:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contenedor_proyectos {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+
+  .contenedor_imagen {
+    padding-top: 60%; /* Ratio ligeramente diferente en móvil */
+  }
+
+  .contenido_tarjeta {
+    padding: 1.5em 1.2em;
+  }
+
+  .titulo_tarjeta {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor_imagen {
+    padding-top: 65%;
+  }
+
+  .contenido_tarjeta {
+    padding: 1.2em 1em;
+  }
+
+  .titulo_tarjeta {
+    font-size: 1.3em;
+  }
+
+  .descripcion_tarjeta {
+    font-size: 0.9em;
+  }
+
+  .boton {
+    padding: 0.8em 1.2em;
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor_proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

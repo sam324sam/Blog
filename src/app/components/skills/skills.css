@@ -1,0 +1,81 @@
+/* SECCIÓN: HABILIDADES */
+.seccion_habilidades {
+    padding: 50px 0;
+}
+
+.seccion_habilidades .contenedor{
+    gap: 1em;
+}
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap : 0.9em;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    padding:  0  0 1.3em 0 ;
+}
+
+.icono_habilidad {
+    width: 5em;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.icono_habilidad:hover {
+    transform: scale(1.1);
+}
+
+.celda_habilidades {
+    width: 80%;
+    text-align: center;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+}
+
+.celda_habilidades:hover {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.celda_habilidades h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+  background: linear-gradient(135deg, var(--color-morado-claro), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.icono_habilidad_fig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 5em;
+    text-align: center;
+}
+
+.icono_habilidad_fig figcaption {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: white;
+}
+
+
+@media (max-width: 600px) {
+  .icono_habilidad{
+    width: 3em;
+  }
+  .icono_habilidad_fig figcaption {
+    font-size: 0.8em;
+  }
+}
