@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular (production)
-        run: npm run build -- --configuration production --base-href=/samuelmoniz/
+        run: npm run build -- --configuration production --base-href=/Blog/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
