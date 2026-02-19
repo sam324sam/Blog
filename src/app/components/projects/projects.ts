@@ -10,6 +10,14 @@ export class Projects {
   proyectos: { titulo: string; descripcion: string; imagen: string; web: string; repo: string }[] =
     [
       {
+        titulo: 'Mokito-web',
+        descripcion:
+          'Mokito-Web es un juego de mascotas virtuales (Tamagotchi) desarrollado con Angular y TailwindCSS.',
+        imagen: 'assets/img_proyectos/Mokito-web.gif',
+        web: 'https://sam324sam.github.io/Mokito-web/',
+        repo: 'https://github.com/sam324sam/Mokito-web',
+      },
+      {
         titulo: 'Pokedex',
         descripcion:
           'Este proyecto es una aplicación web que muestra una lista de Pokémon con información básica de cada uno.',
