@@ -3,14 +3,14 @@
 <section class="seccion_conoceme">
   <h2 class="subtitulo">Conóceme</h2>
   <div class="contenedor_sobreMi">
-    <h4
+    <h3
       class="titulos_sobreMi"
       [class.activo]="contentToShow[0]"
       (click)="showContent(0)"
       (keydown)="showContent(0)"
     >
       ¿Quién soy?
-    </h4>
+    </h3>
 
     <div
       class="conteido_sobreMi"
@@ -25,14 +25,14 @@
       </p>
     </div>
 
-    <h4
+    <h3
       class="titulos_sobreMi"
       [class.activo]="contentToShow[1]"
       (click)="showContent(1)"
       (keydown)="showContent(1)"
     >
       ¿Cuáles son mis intereses?
-    </h4>
+    </h3>
     <div
       class="conteido_sobreMi"
       [class.abierto]="contentToShow[1]"
@@ -44,14 +44,14 @@
         de bases de datos.
       </p>
     </div>
-    <h4
+    <h3
       class="titulos_sobreMi"
       [class.activo]="contentToShow[2]"
       (click)="showContent(2)"
       (keydown)="showContent(2)"
     >
       ¿Qué busco?
-    </h4>
+    </h3>
     <div
       class="conteido_sobreMi"
       [class.abierto]="contentToShow[2]"
@@ -63,14 +63,14 @@
         al éxito de un equipo.
       </p>
     </div>
-    <h4
+    <h3
       class="titulos_sobreMi"
       [class.activo]="contentToShow[3]"
       (click)="showContent(3)"
       (keydown)="showContent(3)"
     >
       ¿Saber más?
-    </h4>
+    </h3>
     <div class="conteido_sobreMi" [class.abierto]="contentToShow[3]">
       <p class="texto_sobreMi">
         Si te interesa conocer más sobre mi experiencia, habilidades y proyectos anteriores, ¡no
