@@ -41,6 +41,16 @@ export class Projects {
         web: '',
         repo: 'https://github.com/DannaPatricia/To-do-list-Backend',
       },
+
+      {
+        titulo: 'Demo de una galeria',
+        descripcion:
+          'Mini galeria estilo pinterest con conexion con las funciones de netlify y cloudinary para la gestion de imagenes',
+        imagen: 'assets/img_proyectos/Galeriademo.webp',
+        web: 'https://galeriademo.netlify.app/',
+        repo: '',
+      },
+
       {
         titulo: 'Proyecto fct',
         descripcion:

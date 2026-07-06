@@ -25,7 +25,7 @@ export class SnakeService {
   }
 
   moverSerpiente(serpiente: CtxSquare, canvas: HTMLCanvasElement) {
-    // Cambiar direccion aleatoriamente con baja probabilidad luego cambio el mat a ver si cada frame es pòco o mul probables
+    // Cambiar direccion aleatoriamente con baja probabilidad luego cambio el mat a ver si cada frame es poco o mul probables
     if (Math.random() < 0.01) {
       // 1% de probabilidad por frame en teoria
       serpiente.direccion = this.obtenerDireccionAleatoria();
