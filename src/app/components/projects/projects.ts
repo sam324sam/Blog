@@ -10,7 +10,15 @@ export class Projects {
   proyectos: { titulo: string; descripcion: string; imagen: string; web: string; repo: string }[] =
     [
       {
-        titulo: 'Mokito-web',
+        titulo: 'Poke Angular',
+        descripcion:
+          'Esta aplicacion es una version mejorada de mi anterior proyecto de pokedex celebrando que ya ha pasado un año de ese proyecto y para demostrar todo lo aprendido en cuanto a desarrollo frontend',
+        imagen: 'assets/img_proyectos/PokeAngular.gif',
+        web: 'https://sam324sam.github.io/Pokedex-V2/',
+        repo: 'https://github.com/sam324sam/Pokedex-V2',
+      },
+      {
+        titulo: 'Mokito Web',
         descripcion:
           'Mokito-Web es un juego de mascotas virtuales (Tamagotchi) desarrollado con Angular y TailwindCSS.',
         imagen: 'assets/img_proyectos/Mokito-web.gif',
@@ -18,12 +26,12 @@ export class Projects {
         repo: 'https://github.com/sam324sam/Mokito-web',
       },
       {
-        titulo: 'Pokedex',
+        titulo: 'Mokito Web Backend',
         descripcion:
-          'Este proyecto es una aplicación web que muestra una lista de Pokémon con información básica de cada uno.',
-        imagen: 'assets/img_proyectos/Pokedex.webp',
-        web: 'https://sam324sam.github.io/Pokedex/',
-        repo: 'https://github.com/sam324sam/Pokedex',
+          'Backend en Spring Boot para un entorno colaborativo en tiempo real donde múltiples usuarios comparten un canvas con sus cursores y mascotas virtuales sincronizadas vía WebSocket.',
+        imagen: 'assets/img_proyectos/Mokito-Web-Backend.png',
+        web: '',
+        repo: 'https://github.com/sam324sam/Mokito-Web-Backend',
       },
       {
         titulo: 'To do list Frontend',
@@ -41,23 +49,21 @@ export class Projects {
         web: '',
         repo: 'https://github.com/DannaPatricia/To-do-list-Backend',
       },
-
       {
         titulo: 'Demo de una galeria',
         descripcion:
           'Mini galeria estilo pinterest con conexion con las funciones de netlify y cloudinary para la gestion de imagenes',
-        imagen: 'assets/img_proyectos/Galeriademo.webp',
+        imagen: 'assets/img_proyectos/Galeriademo.png',
         web: 'https://galeriademo.netlify.app/',
         repo: '',
       },
-
       {
-        titulo: 'Proyecto fct',
+        titulo: 'Pokedex',
         descripcion:
-          'Este repositorio contiene el proyecto final de ciclo formativo de grado superior, desarrollado como parte de la Formación en Centros de Trabajo (FCT).',
-        imagen: 'assets/img_proyectos/Proyecto_fct.webp',
-        web: 'https://sam324sam.github.io/Proyecto-fct/',
-        repo: 'https://github.com/sam324sam/Proyecto-fct',
+          'Este proyecto es una aplicación web que muestra una lista de Pokémon con información básica de cada uno.',
+        imagen: 'assets/img_proyectos/Pokedex.webp',
+        web: 'https://sam324sam.github.io/Pokedex/',
+        repo: 'https://github.com/sam324sam/Pokedex',
       },
       {
         titulo: 'Soporte-Tecnico-App',
