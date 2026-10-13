@@ -10,6 +10,14 @@ export class Projects {
   proyectos: { titulo: string; descripcion: string; imagen: string; web: string; repo: string }[] =
     [
       {
+        titulo: 'Orbital Burn',
+        descripcion:
+          'Proyecto desarrollado en unity para una Game Jam creado en 4 dias con un equipo de 4 personas sobre el motor de juego Unity',
+        imagen: 'assets/img_proyectos/Orbital-Burn.gif',
+        web: 'https://sam324sam.itch.io/orbital-burn',
+        repo: '',
+      },
+      {
         titulo: 'Poke Angular',
         descripcion:
           'Esta aplicacion es una version mejorada de mi anterior proyecto de pokedex celebrando que ya ha pasado un año de ese proyecto y para demostrar todo lo aprendido en cuanto a desarrollo frontend',
